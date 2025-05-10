@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flow.css">
+    <title>CALBIN</title>
+    </style>
+</head>
+<body>
+
+    <h1>convertir numero a binario</h1>
+    <p>introduce un numero entero:</p>
+
+    <input type="number" id="numero" placeholder="Ingresa un número" />
+    <button onclick="convertirABinario()">Convertir a Binario</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function convertirABinario() {
+            const numero = document.getElementById('numero').value;
+
+            if (numero === "" || isNaN(numero) || numero < 0) {
+                document.getElementById('resultado').innerHTML = "Por favor, ingresa un número válido mayor o igual a 0.";
+                return;
+            }
+
+            const binario = parseInt(numero).toString(2);
+
+            document.getElementById('resultado').innerHTML = `El número ${numero} en binario es: <strong>${binario}</strong>`;
+        }
+    </script>
+
+</body>
+</html>
